@@ -12,11 +12,12 @@ public class AspectV6Advice {
     /**
      * 어드바이스의 종류
      *
-     * @Around : @Around에서 모든 기능을 할 수 있음
-     * @Before
+     * @Around : @Around에서 모든 기능을 할 수 있음 무조건 ProceedingJoinPoint를 파라미터로 -> proceed() 메소드로 인해 다음어드바이스를 호출
+     * @Before : JoinPoint를 파라미터로 사용
      * @AfterReturning
      * @AfterThrowing
      * @After : finally 로직
+     * 하지만 @Around가 아닌 어노테이션으로 제약을 걸어줌으로써 좋은 설계를 할 수 있다.
      */
 
     @Around("com.example.demo.aop.order.aop.PointCuts.orderAndService()")
