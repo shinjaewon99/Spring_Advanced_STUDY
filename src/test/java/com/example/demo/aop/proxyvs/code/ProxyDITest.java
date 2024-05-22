@@ -10,7 +10,8 @@ import org.springframework.context.annotation.Import;
 
 @Slf4j
 // @SpringBootTest(properties = {"spring.aop.proxy-target-class=false"}) // JDK 동적 프록시
-@SpringBootTest(properties = {"spring.aop.proxy-target-class=true"}) // CGLIB 프록시
+// @SpringBootTest(properties = {"spring.aop.proxy-target-class=true"}) // CGLIB 프록시
+@SpringBootTest // 스프링 2.0 버전 이상 부터는 default가 CGLIB 프록시 이므로, 잘 동작 하게된다.
 @Import(ProxyDITest.class)
 public class ProxyDITest {
 
